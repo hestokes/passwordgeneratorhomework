@@ -15,8 +15,34 @@ function writePassword() {
 
 }
 function generatePassword() {
-  var passwordLength = parseInt(prompt("Please enter number of characters you want for your password. Must be between 8 and 128 characters."));
-  // while( )
+  var passwordLength = parseInt(prompt("Please enter number of characters you want for your password. Must be a number between 8 and 128 characters."));
+  while(passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+     passwordLength = parseInt(prompt("What you entered is invalid. Please enter number of characters you want for your password. Must be a number between 8 and 128 characters."));
+  };
+
+  var questionNumbers = confirm("Do you want to include numbers in your password?");
+  var questionLowercases = confirm("Do you want to include lowercases?");
+
+
+  var generatorFunctions = {
+    generateNumbers: function() {
+      return String.fromCharCode(Math.floor(Math.random()) * 20 + 37);
+    }, 
+    generateLowercases: function() {
+      return String.fromCharCode(Math.floor(Math.random()) * 26 + 37);
+    }, 
+    generateUppercases: function() {
+      return String.fromCharCode(Math.floor(Math.random()) * 26 + 37);
+    }, 
+    generateSpecialCharacters: function() {
+      return String.fromCharCode(Math.floor(Math.random()) * 5);
+    }
+  };
+
+  var generatedPassword = "";
+  
+  //make for loop with if else statesments inside and it will use the generator functions (generateNumbers etc..)
+  return generatedPassword;
 };
 //criteria for length
 //criteria for character types lower case, upper..etc
@@ -25,5 +51,8 @@ function generatePassword() {
 
 
 // Add event listener to generate button
+
+//next steps figure out how to add the special characters i want to include !@#$% (there will only be five)
+//complete return generatePassword; piece, middle bit betwee that and var generatedPassword + "";
 
 
