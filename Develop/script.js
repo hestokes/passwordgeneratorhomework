@@ -35,11 +35,24 @@ function generatePassword() {
       return String.fromCharCode(Math.floor(Math.random()) * 26 + 37);
     }, 
     generateSpecialCharacters: function() {
-      return String.fromCharCode(Math.floor(Math.random()) * 5);
-    }
+      return String.fromCharCode(Math.floor(Math.random() * 6) + 33);
+    },
   };
 
   var generatedPassword = "";
+  
+  for (generatedPassword)
+
+  if (questionNumbers) {
+    return array.generateNumbers;
+  };
+  
+  else (questionLowercases) {
+    return generateLowercases;
+  };
+  
+
+
   
   //make for loop with if else statesments inside and it will use the generator functions (generateNumbers etc..)
   return generatedPassword;
