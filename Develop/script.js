@@ -30,8 +30,18 @@ generateEl.addEventListener("click", () => {
         hasnumber, 
         hasuppercase, 
         haslowercase, 
-        hasspecialcharacters);
+        hasspecialcharacters
+        );
 });
+
+function generatePassword(number, lower, upper, symbol, length) {
+    //STOPPED HERE
+    //next steps:
+    //1. init pw var
+    //2. filter out unchecked types
+    //3. loop over length call generator function for each type
+    //4. add final pw to the pw var and return
+}
 
 
 //generate functions for password characters
