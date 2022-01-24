@@ -5,7 +5,7 @@ const numbersEl = document.getElementById("numbers");
 const uppercaseEl = document.getElementById("uppercase");
 const lowercaseEl = document.getElementById("lowercase");
 const specialcharactersEl = document.getElementById("specialcharacters");
-const passwordEl = document.getElementById("password");
+const generateEl = document.getElementById("generate");
 
 
 //This object will contain functions that create characters
@@ -17,6 +17,8 @@ const randomfunc = {
 }
 
 //Click event to generate password
+
+
 
 //generate functions for password characters
 function getNumber() {
