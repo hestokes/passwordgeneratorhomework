@@ -13,7 +13,7 @@ const randomfunc = {
     number: getNumber,
     lower: getLowercase,
     upper: getUppercase,
-    symbol: getSymbol
+    specialcharacter: getSpecialCharacter
 }
 
 //Click event to generate password
@@ -34,13 +34,23 @@ generateEl.addEventListener("click", () => {
         );
 });
 
-function generatePassword(number, lower, upper, symbol, length) {
+function generatePassword(number, lower, upper, specialcharacter, length) {
     //STOPPED HERE
     //next steps:
     //1. init pw var
     //2. filter out unchecked types
     //3. loop over length call generator function for each type
     //4. add final pw to the pw var and return
+
+    let generatedPassword  = '';
+
+    const typesCount = number + lower + upper + specialcharacter;
+
+    console.log("typesCount: ", typesCount);
+
+    const typesArr = [lower, upper, number, specialcharacter];
+//There is a problem with 'number', it is coming out as 128, which is incorrect
+    console.log('typesArr', typesArr);
 }
 
 
@@ -60,9 +70,9 @@ function getUppercase() {
     return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 };
 
-function getSymbol() {
-    const symbol = '~!@#%^&*+/{}';
-    return symbol[Math.floor(Math.random() *symbol.length)];
+function getSpecialCharacter() {
+    const specialcharacter = '~!@#%^&*+/{}';
+    return specialcharacter[Math.floor(Math.random() *specialcharacter.length)];
 };
 
 
