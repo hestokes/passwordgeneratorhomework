@@ -72,6 +72,14 @@ header {
   clear: both;
 }
 
+.setting {
+  display: flex;
+  justify-content:  space-between;
+  font-family: sans-serif;
+  font-size: x-large;
+}
+
+
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
