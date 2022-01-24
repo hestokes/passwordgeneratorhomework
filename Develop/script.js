@@ -7,6 +7,10 @@ const lowercaseEl = document.getElementById("lowercase");
 const specialcharactersEl = document.getElementById("specialcharacters");
 const generateEl = document.getElementById("generate");
 
+alert("Welcome to Password Generator! Please use the first box below to select the length of your password between 8 and 128 characters.");
+
+alert("After choosing your passord length, use the remaining boxes to choose if you would like to include Numbers, Upper or Lowercase letters, or Special characters. You must choose at least one!");
+
 
 //This object will contain functions that create characters
 const randomfunc = {
@@ -56,6 +60,9 @@ function generatePassword(number, upper, lower, specialcharacter, length) {
     // console.log('typesArr', typesArr);
 
     if(typesCount === 0) {
+        
+        confirm("You must select at least one box to continue!");
+        
         return "";
     }
 
