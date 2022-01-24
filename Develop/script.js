@@ -1,5 +1,15 @@
-//generate functions for password characters
+//Setting up DOM elements
 
+
+//This object will contain functions that create characters
+const randomfunc = {
+    number: getNumber,
+    lower: getLowercase,
+    upper: getUppercase,
+    symbol: getSymbol
+}
+
+//generate functions for password characters
 function getNumber() {
     
     return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
