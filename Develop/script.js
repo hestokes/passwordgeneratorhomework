@@ -17,7 +17,21 @@ const randomfunc = {
 }
 
 //Click event to generate password
+generateEl.addEventListener("click", () => {
+    const length = +lengthEl.value;
+    const hasnumber = numbersEl.checked;
+    const hasuppercase = uppercaseEl.checked;
+    const haslowercase = lowercaseEl.checked;
+    const hasspecialcharacters = specialcharactersEl.checked;
 
+
+    passwordEl.innerText = generatePassword (
+        length, 
+        hasnumber, 
+        hasuppercase, 
+        haslowercase, 
+        hasspecialcharacters);
+});
 
 
 //generate functions for password characters
@@ -41,5 +55,5 @@ function getSymbol() {
     return symbol[Math.floor(Math.random() *symbol.length)];
 };
 
-console.log(getSymbol());
+
 
