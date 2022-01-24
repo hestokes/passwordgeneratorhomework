@@ -11,8 +11,8 @@ const generateEl = document.getElementById("generate");
 //This object will contain functions that create characters
 const randomfunc = {
     number: getNumber,
-    lower: getLowercase,
     upper: getUppercase,
+    lower: getLowercase,
     specialcharacter: getSpecialCharacter
 }
 
@@ -26,15 +26,15 @@ generateEl.addEventListener("click", () => {
 
 
     passwordEl.innerText = generatePassword (
-        length, 
         hasnumber, 
         hasuppercase, 
         haslowercase, 
-        hasspecialcharacters
+        hasspecialcharacters,
+        length
         );
 });
 
-function generatePassword(number, lower, upper, specialcharacter, length) {
+function generatePassword(number, upper, lower, specialcharacter, length) {
     //STOPPED HERE
     //next steps:
     //1. init pw var
@@ -44,13 +44,34 @@ function generatePassword(number, lower, upper, specialcharacter, length) {
 
     let generatedPassword  = '';
 
-    const typesCount = number + lower + upper + specialcharacter;
+    const typesCount = number + upper + lower + specialcharacter;
 
-    console.log("typesCount: ", typesCount);
+    // console.log("typesCount: ", typesCount);
 
-    const typesArr = [lower, upper, number, specialcharacter];
-//There is a problem with 'number', it is coming out as 128, which is incorrect
-    console.log('typesArr', typesArr);
+    const typesArr = [{number}, {upper}, {lower}, {specialcharacter}].filter
+    (
+        item =>Object.values(item)[0]
+    );
+
+    // console.log('typesArr', typesArr);
+
+    if(typesCount === 0) {
+        return "";
+    }
+
+    for(let i = 0; i < length; i += typesCount) {
+        typesArr.forEach(type => {
+           const funcName = Object.keys(type) [0];
+        // console.log("funcName:", funcName);
+
+           generatedPassword += randomfunc[funcName]();
+        });
+
+    
+    }
+    const finalPassword = generatedPassword.slice(0, length);
+
+    return finalPassword;
 }
 
 
