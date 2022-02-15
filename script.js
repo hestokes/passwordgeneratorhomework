@@ -28,6 +28,10 @@ generateEl.addEventListener("click", () => {
     const haslowercase = lowercaseEl.checked;
     const hasspecialcharacters = specialcharactersEl.checked;
 
+    if(length <= 8 || length >= 128) {
+        window.alert('Please select a number between 8 and 128')
+        return;
+    }   
 
     passwordEl.innerText = generatePassword (
         hasnumber, 
@@ -38,13 +42,10 @@ generateEl.addEventListener("click", () => {
         );
 });
 
+
+
 function generatePassword(number, upper, lower, specialcharacter, length) {
-    //STOPPED HERE
-    //next steps:
-    //1. init pw var
-    //2. filter out unchecked types
-    //3. loop over length call generator function for each type
-    //4. add final pw to the pw var and return
+   
 
     let generatedPassword  = '';
 
