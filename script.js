@@ -28,7 +28,7 @@ generateEl.addEventListener("click", () => {
     const haslowercase = lowercaseEl.checked;
     const hasspecialcharacters = specialcharactersEl.checked;
 
-    if(length <= 8 || length >= 128) {
+    if(length <= 8 || length >= 129) {
         window.alert('Please select a number between 8 and 128')
         return;
     }   
